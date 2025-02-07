@@ -2374,4 +2374,13 @@ typedef Elf32_Addr Elf32_Conflict;
 
 #define R_X86_64_NUM		24
 
+/* OpenRISC Relocations */
+
+#define R_OR1K_32		1
+#define R_OR1K_LO_16_IN_INSN	4
+#define R_OR1K_HI_16_IN_INSN	5
+#define R_OR1K_INSN_REL_26	6
+#define R_OR1K_AHI16		35
+#define R_OR1K_SLO16		39
+
 #endif	/* elf.h */

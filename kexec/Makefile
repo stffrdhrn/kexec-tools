@@ -89,6 +89,7 @@ include $(srcdir)/kexec/arch/i386/Makefile
 include $(srcdir)/kexec/arch/ia64/Makefile
 include $(srcdir)/kexec/arch/m68k/Makefile
 include $(srcdir)/kexec/arch/mips/Makefile
+include $(srcdir)/kexec/arch/or1k/Makefile
 include $(srcdir)/kexec/arch/cris/Makefile
 include $(srcdir)/kexec/arch/ppc/Makefile
 include $(srcdir)/kexec/arch/ppc64/Makefile

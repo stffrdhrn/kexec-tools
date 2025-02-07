@@ -54,12 +54,15 @@
 #ifdef __alpha__
 #define __NR_kexec_load                448
 #endif
+#ifdef __or1k__
+#define __NR_kexec_load		104
+#endif
 #ifndef __NR_kexec_load
 #error Unknown processor architecture.  Needs a kexec_load syscall number.
 #endif
 #endif /*ifndef __NR_kexec_load*/
 
-#if defined(__arm__) || defined(__loongarch__)
+#if defined(__arm__) || defined(__loongarch__) || defined(__or1k__)
 #undef __NR_kexec_file_load
 #endif
 
@@ -141,6 +144,7 @@ static inline long kexec_file_load(int kernel_fd, int initrd_fd,
 #define KEXEC_ARCH_MIPS    ( 8 << 16)
 #define KEXEC_ARCH_CRIS    (76 << 16)
 #define KEXEC_ARCH_LOONGARCH	(258 << 16)
+#define KEXEC_ARCH_OR1K    (92 << 16)
 
 #define KEXEC_MAX_SEGMENTS 16
 
@@ -186,6 +190,9 @@ static inline long kexec_file_load(int kernel_fd, int initrd_fd,
 #endif
 #if defined(__loongarch__)
 #define KEXEC_ARCH_NATIVE	KEXEC_ARCH_LOONGARCH
+#endif
+#ifdef __or1k__
+#define KEXEC_ARCH_NATIVE	KEXEC_ARCH_OR1K
 #endif
 
 #endif /* KEXEC_SYSCALL_H */
